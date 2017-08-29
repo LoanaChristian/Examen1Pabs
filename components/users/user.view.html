@@ -18,6 +18,10 @@
               <label class="control-label">Nombre</label>
               <input name="" type="text" class="form-control" required ng-model="ctrl.name">
             </div>
+						<div class="col-md-6">
+              <label>Foto</label>
+              <input type="file" id="photo" ng-model="ctrl.image">
+            </div>
           </div>
         </div>
 		<button class="btn btn-default pull-right" ng-click="ctrl.Save()" ng-disabled="regPlayer.$invalid">Guardar</button>

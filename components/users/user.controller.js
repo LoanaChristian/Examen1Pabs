@@ -15,7 +15,7 @@
     }
     init();
     ctrl.Save = function(pimage){
-      var newPlaye = {
+      var newPlayer = {
         code: ctrl.code,
         name: ctrl.name,
         alias: ctrl.alias,
