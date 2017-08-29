@@ -26,6 +26,7 @@
     "bootstrap-material-design": "4.0.2"
   },
   "resolutions": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "jquery": "^2.2"
   }
 }
