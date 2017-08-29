@@ -15,7 +15,7 @@
     }
     init();
     ctrl.Save = function(pimage){
-      var newPlayer = {
+      var newPlaye = {
         code: ctrl.code,
         name: ctrl.name,
         alias: ctrl.alias,
@@ -30,18 +30,31 @@
       clear();
       }
     }
-    // ctrl.preSave = function() {
-    //   ctrl.cloudObj.data.file = document.getElementById("photo").files[0];
-    //   if (ctrl.cloudObj.data.file == null) {
-    //     ctrl.Save();
-    //   }else{
-    //   Upload.upload(ctrl.cloudObj)
-    //     .success(function(data) {
-    //       ctrl.Save(data.url);
-    //     });
-    //   }
-    //
-    // }
+    ctrl.preSave = function() {
+      ctrl.cloudObj.data.file = document.getElementById("photo").files[0];
+      if (ctrl.cloudObj.data.file == null) {
+        ctrl.Save();
+      }else{
+      Upload.upload(ctrl.cloudObj)
+        .success(function(data) {
+          ctrl.Save(data.url);
+        });
+      }
+
+    }
+    ctrl.scndSave = function(){
+      var newbuy = {
+        player: ctrl.player,
+        property: ctrl.property
+      }
+
+      var validate = userService.checkProperty(newbuy);
+      if (validate == false) {
+      userService.buy(newbuy);
+      init();
+      scndClear();
+      }
+    }
     ctrl.scndClear = function(){
       var newbuy = {
         player: ctrl.player,
